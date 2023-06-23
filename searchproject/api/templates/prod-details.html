@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/prod-details.css') }}" />-->
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/prod-details.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-wrapper">
+        <div class="img-text-wrapper">
+          <div class="logo" style="background-color: gray"></div>
+          <span class="logo-text"> search project </span>
+        </div>
+        <form class="search-wrapper" method="post" action="/">
+          <div
+            style="background-image: url(../static/images/search.svg)"
+            class="search-icon background-img"
+          ></div>
+          <input
+            id="fraze"
+            name="fraze"
+            type="text"
+            placeholder="Search our database..."
+          />
+        </form>
+        <span class="logo-text"> Made By Michał Pętlewski </span>
+      </div>
+    </header>
+    <div class="main-wrapper">
+      {% for item in results %}
+      <div class="window-wrapper">
+        <div class="left-colum-wrapper column">
+          <div class="product-wrapper">
+            <div class="product-name">
+              <span>{{ item[1] }}</span>
+              <div
+                style="background-image: url(../static/images/hearUnactive.svg)"
+                class="heart background-img"
+              ></div>
+            </div>
+            <img
+              src="../static/images/{{ item[0] }}"
+              class="background-img product-img"
+            />
+          </div>
+        </div>
+        <div class="right-column-wrapper column">
+          <div class="price-wrapper product-info">
+            <span>{{ item[3] }}zł</span>
+          </div>
+          <div class="name-wrapper product-info">
+            <span>{{ item[1] }}</span>
+          </div>
+          <div class="description-wrapper product-info">
+            <span> {{ item[2] }} </span>
+          </div>
+          <div class="rate-wrapper product-info">
+            <span> Ocana wg użytkowników: {{ avg_rate }} </span>
+          </div>
+          <div class="controls product-info">
+            <div class="counter-wrapper">
+              <div class="window minus gray">
+                <span>-</span>
+              </div>
+              <div class="window display">
+                <span class="digit">1</span>
+              </div>
+              <div class="window plus">
+                <span>+</span>
+              </div>
+            </div>
+            <a href="../payment" class="order-button">
+              <div
+                style="
+                  background-image: url(../static/images/cart-4-svgrepo-com.svg);
+                "
+                class="card background-img"
+              ></div>
+              <span>order now!</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="rating-section">
+      <div class="comments-wrapper">
+        <h2>Comments and rate</h2>
+        {% for comment in comments %}
+        <div class="user-comment-bar">
+          <div class="user-img img"></div>
+          <div class="user-info">
+            <div class="user-name-wrapper">
+              <span>{{ comment[0] }}</span>
+            </div>
+            <div class="rate-value">
+              <span>{{ comment[1] }}</span>
+            </div>
+            <div class="comment-wrapper">
+              <span>{{comment[2]}}</span>
+            </div>
+          </div>
+        </div>
+        {% endfor %}  
+      </div>
+    </div>
+    <div class="comments-section">
+      <h2>Comments</h2>
+      <div class="comment-form">
+        <form action="/submit-comment" method="post">
+          <div class="form-group">
+            <input name="id" type="hidden" value=" {{ id }} ">
+            <label for="username">Username</label>
+            <input
+              class="input-comment"
+              type="text"
+              id="username"
+              name="username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="rating">Rating (1-5)</label>
+            <input
+              type="number"
+              id="rating"
+              name="rating"
+              min="1"
+              max="5"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea
+              class="input-comment"
+              id="comment"
+              name="comment"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Submit Comment</button>
+        </form>
+      </div>
+    </div>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

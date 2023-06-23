@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>searchproject</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-wrapper">
+        <div class="img-text-wrapper">
+          <!-- <img class="logo-img" src="" alt="logo">-->
+          <div class="logo" style="background-color: gray"></div>
+          <span class="logo-text"> search project </span>
+        </div>
+        <form class="search-wrapper" method="post" action="/">
+          <div style="background-image: url(../static/images/search.svg);" class="search-icon background-img"></div>
+          <input
+            id="fraze"
+            name="fraze"  
+            type="text"
+            placeholder="Search our database..."
+          />
+        </form>        
+        <span class="logo-text"> Made By Michał Pętlewski </span>
+      </div>
+    </header>
+
+    <div class="nav-main-wrapper">
+      <nav class="sidebar">
+        <div class="menu">
+          <span style="font-weight: bold">Kategorie</span>
+          <ul>
+            <form class="category-form" action="/submit" method="post">
+              <li>
+                <div class="bar-wrapper">
+                  <input type="checkbox" name="category" id="category1" value="1" />
+                  <div class="background-img" style="background-image: url(../static/images/computer-svgrepo-com\ \(1\).svg)"></div>
+                  <label for="category1">Elektronika</label>
+                </div>
+              </li>
+              <li>
+                <div class="bar-wrapper">
+                  <input type="checkbox" name="category" id="category2" value="2" />
+                  <div class="background-img" style="background-image: url(../static/images/working-bag-2-svgrepo-com\ \(1\).svg)"></div>
+                  <label for="category2">Do Pracy</label>
+                </div>
+              </li>
+              <li>
+                <div class="bar-wrapper">
+                  <input type="checkbox" name="category" id="category3" value="3"/>
+                  <div class="background-img" style="background-image: url(../static/images/graduation-cap-svgrepo-com.svg)"></div>
+                  <label for="category3">Edukacja</label>
+                </div>
+              </li>
+              <li>
+                <div class="bar-wrapper">
+                  <input type="checkbox" name="category" id="category4" value="4" />
+                  <div class="background-img" style="background-image: url(../static/images/game-controller-svgrepo-com\ \(1\).svg)"></div>
+                  <label for="category4">Rozrywka</label>
+                </div>
+              </li>
+              <li>
+                <div class="bar-wrapper" onclick="">
+                  <input type="checkbox" name="category" id="category5" value="5" />
+                  <div class="background-img" style="background-image: url(../static/images/kitchen-cooker-utensils-svgrepo-com\ \(1\).svg)"></div>
+                  <label for="category5">Kuchenne</label>
+                </div>
+              </li>
+              <li>
+                <div class="bar-wrapper">
+                  <input type="checkbox" name="category" id="category6" value="6" />
+                  <div class="background-img" style="background-image: url(../static/images/list-1510-svgrepo-com.svg)"></div>
+                  <label for="category6">Specjalne</label>
+                </div>
+              </li>
+              <li>
+                <div class="bar-wrapper">
+                  <input type="checkbox" name="category" id="category7" value="7" />
+                  <div class="background-img" style="background-image: url(../static/images/flask-4-svgrepo-com.svg)"></div>
+                  <label for="category7">Inne...</label>
+                </div>
+              </li>
+            </form>
+          </ul>
+        </div>
+      </nav>
+    </div>
+      <div class="main-wrapper">
+        <div class="first-message-wrapper">
+          <span> {{firstmessage}} </span>
+        </div>
+        <div class="results-wrapper">
+          {% for item in results %}
+          <div class="box-wrapper">
+            <div class="inner-box-wrapper">
+              <div class="img-wrapper">
+                <img class="img" src="/static/images/{{item[2]}}" alt="product pic" />
+              </div>
+              <div class="text-wrapper">
+                <h1>{{ item[0] }}</h1>
+                <br/>
+                <span>{{ item[1] }}</span>
+              </div>
+              <a href="./details/{{ item[3] }}">
+                <div class="button-product">
+                  <span>See product details</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <script defer src="../static/js/submit.js"></script>
+  </body>
+</html>

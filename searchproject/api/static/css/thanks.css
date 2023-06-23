@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: sans-serif;
+    background-color: rgba(211,211,211,255);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-wrapper{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.text-wrapper{
+    font-size: 40px;
+}
+
+.link-wrapper{
+    background-color: rgb(55, 201, 172);
+    padding: 10px;
+    color: whitesmoke;
+}
+
+.link-wrapper:hover{
+    background-color: rgba(112,216,193,255);
+}

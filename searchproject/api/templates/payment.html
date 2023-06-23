@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/payment.css') }}" />
+    <title>confirm payment</title>
+  </head>
+  <body style="height: 100vh;">
+    <div class="main-wrapper-form">
+      <div class="top-wrapper">
+        <div class="text-wrapper-top">
+          <span>Confirm Purchase</span>
+        </div>
+      </div>
+      <form class="form-wrapper-main" action="/payment" method="post" >
+        <div class="top-section">
+          <div class="owner-wrapper input-item">
+            <label for="input-name">Owner name</label>
+            <input class="input-border" name="input-name" id="input-name" type="text" />
+          </div>
+          <div class="cvv-wrapper input-item">
+            <label id="cvv-label" for="CVV">CVV</label>
+            <input class="input-border" name="CVV" id="CVV" type="text" />
+          </div>
+        </div>
+        <div class="numbers input-item">
+          <label id="numbers-label" for="card-numbers">Card numbers</label>
+          <input class="input-border" name="card-numbers" id="card-numbers" type="text" />
+        </div>
+        <div class="bottom-section input-item">
+          <div class="expiration-date-wrapper">
+            <label>Expiration date</label>
+            <div class="select-wrapper">
+              <select class="select-date left-bar">
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+              <select class="select-date right-bar">
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+              </select>
+            </div>
+          </div>
+          <div class="card-types-wrapper">
+            <div
+              style="background-image: url(../static/images/mastercard.jpg)"
+              class="card-img background-img"
+            ></div>
+            <div
+              style="background-image: url(../static/images/blik.png)"
+              class="card-img background-img"
+            ></div>
+            <div
+              style="background-image: url(../static/images/Old_Visa_Logo.svg.png)"
+              class="card-img background-img"
+            ></div>
+          </div>
+          <div class="checkbox-wrapper">
+            <input id="save" name="save" value="True" type="checkbox">
+            <label for="save">save credit</label>
+          </div>
+        </div>
+        <a id="link" href="../thank-you">
+          <input
+            id="submit"
+            placeholder="submit order"
+            type="submit"
+            class="button"
+            value="submit order"
+          />
+        </a>
+      </form>
+      <div class="bottom-wrapper">
+        {{ message }}
+      </div>
+    </div>
+    <script src="../static/js/card-numbers.js"></script>
+  </body>
+</html>

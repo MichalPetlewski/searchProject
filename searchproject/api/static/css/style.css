@@ -1,0 +1,229 @@
+    :root{
+    --greengrad: linear-gradient(45deg, rgba(27,27,27,1) 0%, rgba(55,201,172,1) 100%);
+    --transgray: rgba(27,27,27,0.37);
+    --green: rgb(55, 201, 172)
+}
+
+.background-img{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 30px;
+    min-width: 30px;
+}
+
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    background: var(--greengrad);
+    background-attachment: fixed;
+    padding-bottom: 10px;
+    overflow-x: hidden;
+    color: whitesmoke;
+  }
+
+header{
+    border-bottom:2px solid black ;
+    padding: 30px;
+    font-size: larger;
+    margin: 0px;
+    position: sticky;
+    background-color: var(--transgray);
+    backdrop-filter: blur(2px);
+
+}
+
+ul{
+    padding: 0px;
+    padding-left: 10px;
+    list-style-type: none;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+
+.logo-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.logo{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+.img-text-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-wrapper{
+    display: flex;
+    align-items: center;
+    border: 2px black solid;
+    border-radius: 40px; 
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 10px;    
+    backdrop-filter: blur(2px);
+}
+
+.bar-wrapper > input{
+    all: unset;
+    font-family: sans-serif;
+    padding: 10px;
+    width: 100%;
+    color: black;
+}
+
+.search-wrapper > input{
+    all: unset;
+    font-family: sans-serif;
+    padding: 10px;
+    width: 100%;
+    color: black;
+}
+
+.submit-btn{
+    all: unset;
+    font-family: sans-serif;
+    padding: 10px;
+    width: 100%;
+    color: black;
+}
+
+.results-wrapper{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+
+.box-wrapper{
+    background-color: var(--transgray);
+    /**min-width: 350px;
+    min-height: 350px;
+    max-width: fit-content;
+    max-height: fit-content;
+    **/
+    height: 350px;
+    width: 350px;
+    border: 2px black solid;
+    border-radius: 30px;
+    padding: 5px;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.img-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.img{
+    width: 210px;
+    height: 130px;
+    border: 3px solid black;
+    padding: 3px;
+    border-radius: 12px;
+}
+
+.box-wrapper:hover{
+    transform: scale(1.02);
+    transition: linear 0.2s;
+}
+
+.first-message-wrapper{
+    margin: 12px 0px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.inner-box-wrapper .text-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-main-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar{
+    width: fit-content;
+    padding: 15px;
+    position: absolute;
+    background-color: var(--transgray);
+    border: 2px solid black;
+    margin-top: 10px;
+    height: fit-content;
+}
+
+.main-wrapper{
+    margin: auto;
+}
+
+.bar-wrapper{
+    display: flex;
+    align-items: center;
+    min-width: 140px;
+    padding-left: 13px;
+    gap: 4px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 7.5px;
+    min-height: 50px;
+}
+
+.bar-wrapper > input{
+    all: unset;
+    padding: 0px;
+
+}
+
+.bar-wrapper > label{
+    cursor: pointer;
+}
+
+.bar-wrapper:hover{
+    background-color: var(--green);
+}
+
+.button-product {
+    max-height: fit-content;
+    max-width: fit-content;
+    min-height: 44px;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+}
+
+.button-product:hover{
+    background-color: rgb(112,216,193);
+}

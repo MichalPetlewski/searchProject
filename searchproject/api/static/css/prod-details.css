@@ -1,0 +1,209 @@
+:root {
+    --greengrad: linear-gradient(45deg, rgba(27, 27, 27, 1) 0%, rgba(55, 201, 172, 1) 100%);
+    --transgray: rgba(27, 27, 27, 0.37);
+    --green: rgb(55, 201, 172);
+    --gray: rgba(217, 221, 220, 1);
+  }
+
+  body {
+    background-color: var(--green);
+  }
+
+  .main-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .column {
+    min-width: 500px;
+    min-height: 500px;
+    background-color: var(--transgray);
+    padding: 10px;
+    border: 2px black solid;
+  }
+
+  .window-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .product-name {
+    height: 60px;
+    border-bottom: 2px solid var(--gray);
+    border-radius: 2.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product-name > span {
+    font-weight: bolder;
+    font-size: 30px;
+  }
+
+  .heart {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .heart-active {
+    background-image: url(../static/heartActive.png);
+  }
+
+  .product-img {
+    background-color: gray;
+    height: 500px;
+    margin-top: 10px;
+  }
+
+  .right-column-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .product-info {
+    display: flex;
+    border-bottom: 2px solid var(--gray);
+    border-radius: 2.5px;
+  }
+
+  .price-wrapper, .name-wrapper, .rate-wrapper {
+    height: 60px;
+    max-width: 500px;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+  .description-wrapper {
+    height: 200px;
+    font-size: 20px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 35px;
+    padding-bottom: 20px;
+  }
+
+  .counter-wrapper {
+    display: flex;
+  }
+
+  .window {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+  }
+
+  .minus {
+    border-right: 0.5px solid black;
+    cursor: pointer;
+  }
+
+  .plus {
+    border-left: 0.5px solid black;
+    cursor: pointer;
+  }
+
+  .display {
+    width: 70px;
+  }
+
+  .order-button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 42px;
+    background-color: var(--green);
+    width: 176.4px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .order-button:hover {
+    background-color: rgb(112, 216, 193);
+  }
+
+  .gray {
+    color: var(--gray);
+    background-color: gray;
+  }
+
+  .comments-section {
+    padding: 20px;
+  }
+
+  .comment-form {
+    margin-top: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+  .input-comment,
+  textarea {
+    width: 400px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+  }
+
+  textarea{
+    height: 100px;
+  }
+
+  button[type="submit"] {
+    background-color: var(--green);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: rgb(112, 216, 193);
+  } 
+
+  .user-img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-right: 10px;
+  }
+
+  .comments-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+    
+  }
+  
+  .user-comment-bar{
+    display: flex;
+    align-items: center;
+  }
+
+  
