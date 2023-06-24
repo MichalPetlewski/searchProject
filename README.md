@@ -1,4 +1,4 @@
-Search Project
+#Search Project
 This is a small online store project created by a 1st grade student. The project allows users to search for products by using a keyword or by browsing through different categories. Users can also leave comments and rate products. Additionally, users have the option to save their card data for future purchases.
 
 Features
