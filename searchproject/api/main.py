@@ -9,13 +9,6 @@ from database import Database
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
-#TO DO: 404, 500 errory -> stworzyc wlasny template : 404, 403, 400, 500
-
-
-#TO DO: singleton wzorzec projektowy -> dekorator + klasa
-# Database() = sqlite3.Database()ect('products.db', check_same_thread= Falsehttps://ujeb.se/cJyfc6)
-
-# Database() = Database().cursor()
     
 
 @app.get('/', response_class=HTMLResponse)
