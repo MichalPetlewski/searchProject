@@ -80,7 +80,6 @@ async def get_card(request: Request):
     CVV = form.get('CVV')
     numbers = form.get('card-numbers')
     is_allowed = form.get('save')
-    #UTILS.py -> przerzucasz tam funkcje
     if '--' in name or '--' in CVV or '--' in numbers:
         name = None
         CVV = None
